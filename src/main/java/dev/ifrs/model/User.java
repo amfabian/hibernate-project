@@ -2,8 +2,10 @@ package dev.ifrs.model;
 
 import javax.persistence.Entity;
 
+import io.quarkus.hibernate.orm.panache.PanacheEntity;
+
 @Entity
-public class User {
+public class User extends PanacheEntity{
     private String name;
 
    
