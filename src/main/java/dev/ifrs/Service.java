@@ -13,12 +13,10 @@ public class Service {
     @GET
     @Path("/user/create/{name}")
     @Produces(MediaType.APPLICATION_JSON)
-        public User creatUser(@PathParam("name") String name) {
+    public User creatUser(@PathParam("name") String name) {
+        User user = new User();
+        user.setName(name);
+        return user;
+    }
 
-            User user = new User();
-            user.setName(name);
-            return user;
-        }
-
-    
 }
