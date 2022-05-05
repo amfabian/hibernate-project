@@ -1,12 +1,8 @@
 package dev.ifrs.model;
 
-import java.util.ArrayList;
 import java.util.List;
-
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.ManyToMany;
-
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import lombok.Getter;
 import lombok.Setter;
@@ -18,8 +14,6 @@ public class Channel extends PanacheEntity {
     @ManyToMany
      private List<User> users;
 
-  //  public Channel() {
-   //     this.users = new ArrayList<>();
-  //  } 
+  
 }
 

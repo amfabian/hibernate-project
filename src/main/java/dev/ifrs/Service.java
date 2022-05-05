@@ -6,7 +6,6 @@ import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
-
 import dev.ifrs.model.Channel;
 import dev.ifrs.model.Message;
 import dev.ifrs.model.User;
