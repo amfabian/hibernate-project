@@ -26,12 +26,18 @@ public class Service {
     }
 
     @GET
-    @Path("/message/create/{text}")
+    @Path("/message/create/{text}/{user_id}")
     @Produces(MediaType.APPLICATION_JSON)
-    public Message createMessage (@PathParam("text") String text) {
+    public Message createMessage (@PathParam("text") String text, @PathParam("user_id") Long user_id) {
+           
         Message message = new Message();
         message.setText(text);
         message.persist();
+
+        User user = User.findById(user_id);
+       
+        user.addMessage(message);
+        user.persist();
         return message;               
     }
     @GET

@@ -16,17 +16,22 @@ import io.quarkus.hibernate.orm.panache.PanacheEntity;
 public class User extends PanacheEntity{
     private String name;
 
-   // @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-  //  @JoinColumn(name = "user_id")
-  //  private List<Message> messages;
+     @OneToMany
+     @JoinColumn(name = "usario_id")
+     private List<Message> messages;
    
-  //  @ManyToMany(cascade = CascadeType.ALL)
-  //  private List<Channel> channels;
+     @ManyToMany
+     private List<Channel> channels;
 
-//    public User() {
-  //      this.messages = new ArrayList<>();
-  //      this.channels = new ArrayList<>();
- //   }
+    // public User() {
+    //    this.messages = new ArrayList<>();
+    //    this.channels = new ArrayList<>();
+    // }
+
+    public void addMessage(Message message) {
+        this.messages.add(message);
+     
+    }
 
     public String getName(){
         return name;
