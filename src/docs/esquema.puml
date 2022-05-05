@@ -1,0 +1,11 @@
+@startuml
+
+
+class User{
+    + String names
+    getname()
+}
+
+User -- "*" Message : "send"
+Message -- Channel
+@enduml
