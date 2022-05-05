@@ -8,16 +8,4 @@ import lombok.Setter;
 
 @Entity
 @Setter @Getter
-public class Message extends PanacheEntity{
-    private String text;
-
-  /*   public String getText() {
-        return text;
-    }
-
-    public void setText(String text) {
-        this.text = text;
-    } */
-
-    
-}
+public class Message extends PanacheEntity{private String text;}
