@@ -2,6 +2,7 @@ package dev.ifrs.model;
 
 import java.util.List;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
@@ -15,11 +16,11 @@ import lombok.Setter;
 public class User extends PanacheEntity{
     private String name;
 
-     @OneToMany
+     @OneToMany(fetch = FetchType.EAGER)
      @JoinColumn(name = "usario_id")
      private List<Message> messages;
    
-     @ManyToMany
+     @ManyToMany(fetch = FetchType.EAGER)
      private List<Channel> channels;
 
    
@@ -27,5 +28,7 @@ public class User extends PanacheEntity{
     public void addMessage(Message message) {
         this.messages.add(message);
     }
-
+    public void addChannel(Channel channel) {
+        this.channels.add(channel);
+    }
 }
