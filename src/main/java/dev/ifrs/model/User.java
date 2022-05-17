@@ -1,30 +1,61 @@
 package dev.ifrs.model;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import io.quarkus.hibernate.orm.panache.PanacheEntity;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-@Entity @NoArgsConstructor @Setter @Getter
+@Entity
 public class User extends PanacheEntity{
     private String name;
 
-     @OneToMany(fetch = FetchType.EAGER)
-     @JoinColumn(name = "usario_id")
+     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+     @JoinColumn(name = "user_id")
      private List<Message> messages;
    
-     @ManyToMany(fetch = FetchType.EAGER)
+     @ManyToMany(cascade = CascadeType.ALL)
+     @JsonBackReference
      private List<Channel> channels;
 
-   
+     public User() {
+        this.messages = new ArrayList<>();
+        this.channels = new ArrayList<>();
+    }
 
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Message> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Message> messages) {
+        this.messages = messages;
+    }
+    
+    public List<Channel> getChannels() {
+        return channels;
+    }
+
+    public void setChannels(List<Channel> channels) {
+        this.channels = channels;
+    }
     public void addMessage(Message message) {
         this.messages.add(message);
     }
