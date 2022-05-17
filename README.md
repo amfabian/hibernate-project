@@ -1,3 +1,5 @@
+# Programação Web 2 - Sistemas para Internet- IFRS-POA. Professor Rodrigo Prestes Machado.
+Segunindo tutorial disponivel em https://pw2.rpmhub.dev/topicos/jpa/hibernate.html
 # hibernate-project Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
