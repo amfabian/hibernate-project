@@ -1,4 +1,5 @@
-# Programação Web 2 - Sistemas para Internet- IFRS-POA. Professor Rodrigo Prestes Machado.
+# Programação Web 2 - Sistemas para Internet- IFRS-POA.
+Professor Rodrigo Prestes Machado.
 Segunindo tutorial disponivel em https://pw2.rpmhub.dev/topicos/jpa/hibernate.html
 # hibernate-project Project
 
