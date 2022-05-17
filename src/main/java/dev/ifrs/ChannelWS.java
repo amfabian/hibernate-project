@@ -1,5 +1,7 @@
 package dev.ifrs;
 
+import java.util.List;
+
 import javax.transaction.Transactional;
 import javax.ws.rs.BadRequestException;
 import javax.ws.rs.GET;
@@ -25,6 +27,13 @@ public class ChannelWS {
       channel.setHash(hash);
       channel.persist();
       return channel;
+   }
+
+   @GET
+   @Path("/list")
+   @Produces(MediaType.APPLICATION_JSON)
+   public List<Channel> list() {
+      return Channel.listAll();
    }
 
    @GET
