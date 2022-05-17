@@ -16,7 +16,7 @@ public class Channel extends PanacheEntity {
     @ManyToMany(mappedBy = "channels", fetch = FetchType.EAGER)
      private List<User> users;
 
-     public void addUser(User user) {
+   public void addUser(User user) {
         this.users.add(user);
     }
 }
